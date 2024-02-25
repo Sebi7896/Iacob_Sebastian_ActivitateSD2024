@@ -1,2 +1,6 @@
 ﻿  FileName.c
+C:\Users\felix\source\repos\Iacob_Sebastian_ActivitateSD2024\Task2\Task2\FileName.c(144,43): warning C4047: 'function': 'Brutarie **' differs in levels of indirection from 'Brutarie ***'
+C:\Users\felix\source\repos\Iacob_Sebastian_ActivitateSD2024\Task2\Task2\FileName.c(144,43): warning C4024: 'VectorNouToatePreturi': different types for formal and actual parameter 3
+C:\Users\felix\source\repos\Iacob_Sebastian_ActivitateSD2024\Task2\Task2\FileName.c(149,94): warning C4047: 'function': 'Brutarie *' differs in levels of indirection from 'Brutarie **'
+C:\Users\felix\source\repos\Iacob_Sebastian_ActivitateSD2024\Task2\Task2\FileName.c(149,94): warning C4024: 'ConcatenareVector': different types for formal and actual parameter 4
   Task2.vcxproj -> C:\Users\felix\source\repos\Iacob_Sebastian_ActivitateSD2024\Task2\x64\Debug\Task2.exe

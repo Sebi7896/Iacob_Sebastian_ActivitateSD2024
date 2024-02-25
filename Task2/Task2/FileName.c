@@ -49,17 +49,71 @@ void afisare(struct Brutarie* brutarie) {
 	}
 	printf("Locatie:%s\n", brutarie->locatie);
 }
+void atribuire(struct Brutarie *brutarie,struct Brutarie brutarieNoua) {
+	brutarie->nume = malloc(strlen(brutarieNoua.nume) + 1);
+	strcpy_s(brutarie->nume, strlen(brutarieNoua.nume) + 1, brutarieNoua.nume);
+	brutarie->nrPaini = brutarieNoua.nrPaini;
+	brutarie->pretPaine = malloc(brutarieNoua.nrPaini * sizeof(float));
+	for (int i = 0; i < brutarieNoua.nrPaini; i++) {
+		brutarie->pretPaine[i] = brutarieNoua.pretPaine[i];
+	}
+	for (int i = 0; i < strlen(brutarieNoua.locatie); i++) {
+		brutarie->locatie[i] = brutarieNoua.locatie[i];
+	}
+	brutarie->locatie[strlen(brutarieNoua.locatie)] = '\0';
+}
 
-void VectorNouToatePreturi(struct Brutarie* vector,int lungime,struct Brutarie *vectorNou,int* lungimeNou,float target) {
-	*lungimeNou = 0;
+void VectorNouToatePreturi(struct Brutarie* vector,int lungime,struct Brutarie **vectorNou,int* lungimeNou,float target) {
+	(*lungimeNou) = 0;
+	int ok;
 	for (int i = 0; i < lungime; i++) {
-		int ok = 0;
-		for (int j = 0; j < lungime; i++) {
+		ok = 0;
+		for (int j = 0; j < vector[i].nrPaini; j++) {
 			if (vector[i].pretPaine[j] < target)
 				ok = 1;
 		}
+		if (ok == 0)
+			(*lungimeNou)++;
  	}
+	*vectorNou = malloc((*lungimeNou) * sizeof(struct Brutarie));
+	int k = 0;
+	for (int i = 0; i < lungime; i++) {
+		ok = 0;
+		for (int j = 0; j < vector[i].nrPaini; j++) {
+			if (vector[i].pretPaine[j] < target)
+				ok = 1;
+		}
+		if (ok == 0) {
+			atribuire(&(*vectorNou)[k], vector[i]);
+			k++;
+		}
+	}
+}
 
+struct Brutarie* ConcatenareVector(int* lungimeConcatenare,struct Brutarie *a,int lungimeA,struct Brutarie *b,int lungimeB ) {
+	(*lungimeConcatenare) = lungimeA + lungimeB;
+	struct Brutarie* concatenare = malloc((lungimeA + lungimeB) * sizeof(struct Brutarie));
+	int k = 0;
+	for (int i = 0; i < lungimeA; i++) {
+		atribuire(&concatenare[k++], a[i]);
+		 
+	}
+	for (int i = 0; i < lungimeB; i++) {
+		atribuire(&concatenare[k++], b[i]);
+
+	}
+	
+	return concatenare;
+}
+
+void afisareVector(struct Brutarie* VectorBrutarie,int lungime) {
+	if (VectorBrutarie != NULL) {
+		for (int i = 0; i < lungime; i++) {
+			afisare(&VectorBrutarie[i]);
+		}
+	}
+	else
+		printf("\nNull vector");
 }
 int main() {
 	float preturi[] = {2.34f,11.32f};
@@ -73,7 +127,7 @@ int main() {
 	struct Brutarie brutarie4=atribuireDefault();;
 	atribuireBrutarie(&brutarie4, "PaineRea", 2, preturi1, "Centru");
 	struct Brutarie brutarie5=atribuireDefault();;
-	atribuireBrutarie(&brutarie5, "Ioana", 2, preturi1, "Nord-Vest");
+	atribuireBrutarie(&brutarie5, "Ionel", 2, preturi1, "Nord-Vest");
 	
 	
 	struct Brutarie* VectorBrutarie = malloc(5 * sizeof(struct Brutarie));
@@ -83,9 +137,18 @@ int main() {
 	VectorBrutarie[3] = brutarie4;
 	VectorBrutarie[4] = brutarie5;
 
-	for (int i = 0; i < 5; i++) {
-		afisare(&VectorBrutarie[i]);
-	}
-		
+	//afisareVector(VectorBrutarie, 5);
+
+	int lungimeNoua = 0;
+	struct Brutarie** VectorNou = NULL;
+	VectorNouToatePreturi(VectorBrutarie, 5, &VectorNou, &lungimeNoua,10);
+
+	//afisareVector(VectorNou,lungimeNoua);
+
+	int lungimeConcatenare = 0;
+	struct Brutarie* vectorConcatenat = ConcatenareVector(&lungimeConcatenare,VectorBrutarie,5, VectorNou,lungimeNoua);
+	printf("%d", lungimeConcatenare);
+	afisareVector(vectorConcatenat, lungimeConcatenare);
+
 	return 0;
 }
