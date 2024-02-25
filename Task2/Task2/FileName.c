@@ -53,8 +53,10 @@ void afisare(struct Brutarie* brutarie) {
 void VectorNouToatePreturi(struct Brutarie* vector,int lungime,struct Brutarie *vectorNou,int* lungimeNou,float target) {
 	*lungimeNou = 0;
 	for (int i = 0; i < lungime; i++) {
+		int ok = 0;
 		for (int j = 0; j < lungime; i++) {
-
+			if (vector[i].pretPaine[j] < target)
+				ok = 1;
 		}
  	}
 
