@@ -1,0 +1,40 @@
+Ioana
+2
+2.34 11.32 
+Nord
+Mihai
+2
+2.34 11.32 
+Sud
+PaineBuna
+2
+2.34 11.32 
+Est
+PaineRea
+2
+2.34 11.32 
+Centru
+Ionel
+2
+2.34 11.32 
+Nord-Vest
+Cristina
+2
+2.34 11.32 
+Nord
+Adrian
+2
+2.34 11.32 
+Sud
+Robert
+2
+2.34 11.32 
+Est
+PaineCalumea
+2
+2.34 11.32 
+Centru
+Sebastian
+2
+2.34 11.32 
+Nord-Vest
