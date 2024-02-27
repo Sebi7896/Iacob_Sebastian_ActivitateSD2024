@@ -1,0 +1,9 @@
+﻿  FileName.c
+C:\Users\felix\source\repos\Iacob_Sebastian_ActivitateSD2024\Task3\Task3\FileName.c(172,24): warning C4047: 'function': 'Brutarie **' differs in levels of indirection from 'Brutarie ***'
+C:\Users\felix\source\repos\Iacob_Sebastian_ActivitateSD2024\Task3\Task3\FileName.c(172,24): warning C4024: 'preiaInVector': different types for formal and actual parameter 2
+C:\Users\felix\source\repos\Iacob_Sebastian_ActivitateSD2024\Task3\Task3\FileName.c(173,16): warning C4047: 'function': 'Brutarie *' differs in levels of indirection from 'Brutarie **'
+C:\Users\felix\source\repos\Iacob_Sebastian_ActivitateSD2024\Task3\Task3\FileName.c(173,16): warning C4024: 'afisareVector': different types for formal and actual parameter 1
+C:\Users\felix\source\repos\Iacob_Sebastian_ActivitateSD2024\Task3\Task3\FileName.c(177,61): warning C4047: 'function': 'Brutarie *' differs in levels of indirection from 'Brutarie **'
+C:\Users\felix\source\repos\Iacob_Sebastian_ActivitateSD2024\Task3\Task3\FileName.c(177,61): warning C4024: 'salvareVectorDeObiectInFisierText': different types for formal and actual parameter 2
+C:\Users\felix\source\repos\Iacob_Sebastian_ActivitateSD2024\Task3\Task3\FileName.c(159,21): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  Task3.vcxproj -> C:\Users\felix\source\repos\Iacob_Sebastian_ActivitateSD2024\Task3\x64\Debug\Task3.exe
