@@ -1,0 +1,5 @@
+﻿  Source.c
+C:\Users\felix\source\repos\Iacob_Sebastian_ActivitateSD2024\Seminar2\Seminar2\Source.c(87,53): warning C4244: 'function': conversion from 'int' to 'float', possible loss of data
+C:\Users\felix\source\repos\Iacob_Sebastian_ActivitateSD2024\Seminar2\Seminar2\Source.c(89,6): warning C4101: 'v': unreferenced local variable
+C:\Users\felix\source\repos\Iacob_Sebastian_ActivitateSD2024\Seminar2\Seminar2\Source.c(90,7): warning C4101: 'v1': unreferenced local variable
+  Seminar2.vcxproj -> C:\Users\felix\source\repos\Iacob_Sebastian_ActivitateSD2024\Seminar2\x64\Debug\Seminar2.exe
