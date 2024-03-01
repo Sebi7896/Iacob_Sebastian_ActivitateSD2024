@@ -1,2 +1,5 @@
 ﻿  Source.c
-  Curs2.vcxproj -> C:\Users\felix\source\repos\Iacob_Sebastian_ActivitateSD2024\Curs2\x64\Debug\Curs2.exe
+C:\Users\felix\source\repos\Iacob_Sebastian_ActivitateSD2024\Curs2\Curs2\Source.c(22,2): error C4235: nonstandard extension used: '__asm' keyword not supported on this architecture
+C:\Users\felix\source\repos\Iacob_Sebastian_ActivitateSD2024\Curs2\Curs2\Source.c(23,7): error C2065: 'mov': undeclared identifier
+C:\Users\felix\source\repos\Iacob_Sebastian_ActivitateSD2024\Curs2\Curs2\Source.c(23,7): error C2146: syntax error: missing ';' before identifier 'rax'
+C:\Users\felix\source\repos\Iacob_Sebastian_ActivitateSD2024\Curs2\Curs2\Source.c(23,10): error C2065: 'rax': undeclared identifier
