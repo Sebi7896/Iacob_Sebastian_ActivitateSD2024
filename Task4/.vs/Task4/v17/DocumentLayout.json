@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\felix\\source\\repos\\Iacob_Sebastian_ActivitateSD2024\\Task4\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{42ECB4B1-3CC3-4BE9-8244-D123FAED374E}|Task4\\Task4.vcxproj|C:\\Users\\felix\\source\\repos\\Iacob_Sebastian_ActivitateSD2024\\Task4\\Task4\\FileName.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{42ECB4B1-3CC3-4BE9-8244-D123FAED374E}|Task4\\Task4.vcxproj|solutionrelative:Task4\\FileName.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\felix\\source\\repos\\Iacob_Sebastian_ActivitateSD2024\\Task4\\Task4\\brutarie.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Task4\\brutarie.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
     }
@@ -31,6 +35,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "FileName.c",
+              "DocumentMoniker": "C:\\Users\\felix\\source\\repos\\Iacob_Sebastian_ActivitateSD2024\\Task4\\Task4\\FileName.c",
+              "RelativeDocumentMoniker": "Task4\\FileName.c",
+              "ToolTip": "C:\\Users\\felix\\source\\repos\\Iacob_Sebastian_ActivitateSD2024\\Task4\\Task4\\FileName.c*",
+              "RelativeToolTip": "Task4\\FileName.c*",
+              "ViewState": "AQIAAKUAAAAAAAAAAAAvwLEAAAAOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2024-03-12T18:48:10.926Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "brutarie.txt",
               "DocumentMoniker": "C:\\Users\\felix\\source\\repos\\Iacob_Sebastian_ActivitateSD2024\\Task4\\Task4\\brutarie.txt",
               "RelativeDocumentMoniker": "Task4\\brutarie.txt",

@@ -86,6 +86,29 @@ void citireBrutariiFisier(struct Brutarie** brutarii,
 	}
 
 }
+
+struct Brutarie deepCopy(struct Brutarie brutarie) {
+	
+	struct Brutarie copie;
+	if (brutarie.nume != NULL) {
+		copie.nume = (char*)malloc(strlen(brutarie.nume) + 1);
+		strcpy(copie.nume, brutarie.nume);
+	}
+	else
+		copie.nume = NULL;
+	copie.nrPaini = brutarie.nrPaini;
+	if (brutarie.nrPaini != 0) {
+		copie.pretPaine = (float*)malloc(copie.nrPaini * sizeof(float));
+		for (int i = 0; i < copie.nrPaini; i++) {
+			copie.pretPaine[i] = brutarie.pretPaine[i];
+		}
+	}
+	else
+		copie.pretPaine = NULL;
+	strcpy(copie.locatie, brutarie.locatie);
+	return copie;
+
+}
 void copiereInMatrice(struct Brutarie* vector,int dimVec, struct Brutarie** matrice,int nrLinii,int *nrColoane) {
 	//ne luam dupa nrPaini
 	//prima linie nrPaini intre 0 si 3
@@ -100,15 +123,66 @@ void copiereInMatrice(struct Brutarie* vector,int dimVec, struct Brutarie** matr
 			else
 				nrColoane[2]++;
 	}
-	for (int i = 0; i < nrLinii; i++) {
+	matrice[0] = malloc(nrColoane[0] * sizeof(struct Brutarie));
+	matrice[1] = malloc(nrColoane[1] * sizeof(struct Brutarie));
+	matrice[2] = malloc(nrColoane[2] * sizeof(struct Brutarie));
 
+	int k1 = 0;
+	int k2 = 0;
+	int k3 = 0;
+	for (int i = 0; i < dimVec; i++) {
+		if (vector[i].nrPaini <= 3)
+			matrice[0][k1++] = deepCopy(vector[i]);
+		else
+			if (vector[i].nrPaini <= 10)
+				matrice[1][k2++] = deepCopy(vector[i]);
+			else
+				matrice[2][k3++] = deepCopy(vector[i]);
 	}
-	
-
-
-
 }
-
+void afisareMatrice(struct Brutarie** matrice,int nrLini,int* nrColoane) {
+	if (matrice != NULL) {
+		for (int i = 0; i < nrLini; i++) {
+			printf("LINIA %d", i+1);
+			for (int j = 0; j < nrColoane[i]; j++) {
+				afisareBrutarie(matrice[i][j]);
+			}
+		}
+	}
+}
+void sortare(struct Brutarie** matrice,int nrLinii,int* nrColoane) {
+	for (int i = 0; i < nrLinii; i++) {
+		for (int j = 0; j < nrColoane[i] -1; j++) {
+			for (int k = j + 1; k < nrColoane[i]; k++) {
+				if (matrice[i][k].nrPaini < matrice[i][j].nrPaini) {
+					struct Brutarie a = matrice[i][k];
+					matrice[i][k] = matrice[i][j];
+					matrice[i][j] = a;
+				}
+			}
+		}
+	}
+}
+void freeVector(struct Brutarie** vector,int*nrLinii) {
+	for (int i = 0; i < *nrLinii; i++) {
+		freeBrutarie(&((*vector)[i]));
+	}
+	free((*vector));
+	(*nrLinii) = 0;
+}
+void freeMatrice(struct Brutarie*** matrice,int*nrLinii,int** nrColoane) {
+	for (int i = 0; i < (*nrLinii); i++) {
+		for (int j = 0; j < (*nrColoane)[i]; i++) {
+			freeBrutarie(&((*matrice)[i][j]));
+		}
+		freeVector(&(*matrice)[i], &((*nrColoane)[i]));
+	}
+	free(*nrColoane);
+	(*nrColoane) = NULL;
+	free(*matrice);
+	(*matrice) = NULL;
+	(*nrLinii) = 0;
+}
 int main() {
 
 	//2
@@ -116,6 +190,8 @@ int main() {
 	struct Brutarie* brutarie = NULL;
 	citireBrutariiFisier(&brutarie, "brutarie.txt", &dim);
 	afisareVector(brutarie, dim);
+
+
 
 	//3
 	printf("\n\n");
@@ -127,5 +203,12 @@ int main() {
 		nrColoane[i] = 0;
 	}
 
+	copiereInMatrice(brutarie, dim, matrice, nrLinii, nrColoane);
+	afisareMatrice(matrice, nrLinii, nrColoane);
+	sortare(matrice,nrLinii,nrColoane);
+	afisareMatrice(matrice, nrLinii, nrColoane);
+
+	freeVector(&brutarie, &dim);
+	freeMatrice(&matrice, &nrLinii, &nrColoane);
 	return 0;
 }
