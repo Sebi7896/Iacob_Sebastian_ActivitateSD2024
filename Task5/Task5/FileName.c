@@ -82,7 +82,7 @@ void stergeNodIndex(struct Nod** head,int index) {
 			temp = temp->next;
 		if (temp == NULL || temp->next == NULL)
 			return;
-		struct Node* next = temp->next->next;
+		struct Nod* next = temp->next->next;
 		freeBrutarie(&(temp->next->brutarie));
 		free(temp->next);
 		temp->next = next;
