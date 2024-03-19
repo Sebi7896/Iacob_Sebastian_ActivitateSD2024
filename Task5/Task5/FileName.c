@@ -130,6 +130,25 @@ void adaugareSortata(struct Nod** head, struct Brutarie brutarie) {
 	current->next = nod;
 
 }
+void interschimbareNoduri(struct Nod* head, int index1, int index2) {
+
+	struct Nod* nod1 = NULL;
+	struct Nod* nod2 = NULL;
+	int maxim = index1 > index2 ? index1 : index2;
+	int min = index1 > index2 ? index2 : index1;
+	for (int index = 0; index < maxim && head != NULL; index++) {
+		if (index == min) {
+			nod1 = head;
+		}
+		head = head->next;
+	}
+	nod2 = head;
+	if (nod1 != NULL && nod2 != NULL) {
+		struct Brutarie aux = nod1->brutarie;
+		nod1->brutarie = nod2->brutarie;
+		nod2->brutarie = aux;
+	}
+}
 int main() {
 
 
@@ -149,6 +168,8 @@ int main() {
 	adaugareSortata(&headSortat, brutarie2);
 	adaugareSortata(&headSortat, brutarie3);
 	afisareLista(headSortat);
-
+	printf("-----------");
+	interschimbareNoduri(headSortat, 1, 2);
+	afisareLista(headSortat);
 	return 0;
 }
