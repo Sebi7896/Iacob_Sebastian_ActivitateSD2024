@@ -14,7 +14,7 @@ struct Nod {
 	struct Brutarie brutarie;
 	struct Nod* next;
 };
-void adaugareLista(struct Nod** head,struct Brutarie brutarie) {
+void adaugareLista(struct Nod** head, struct Brutarie brutarie) {
 	struct Nod* nodNou = (struct Nod*)malloc(sizeof(struct Nod));
 	nodNou->next = NULL;
 	nodNou->brutarie = brutarie;
@@ -23,21 +23,22 @@ void adaugareLista(struct Nod** head,struct Brutarie brutarie) {
 		return;
 	}
 	struct Nod* last = *head;
-	while (last->next != NULL) 
+	while (last->next != NULL)
 		last = last->next;
 	last->next = nodNou;
 }
 void afisareBrutarie(struct Brutarie brutarie) {
-	printf("\nNume:%s\n", brutarie.nume);
-	printf("Nr Paini:%d\n", brutarie.nrPaini);
+	printf("\nNume:%s", brutarie.nume);
+	printf("	Nr Paini:%d", brutarie.nrPaini);
+	printf("	Paini:");
 	for (int i = 0; i < brutarie.nrPaini; i++) {
-		printf("Painea %d:%.2f\n", i + 1, brutarie.pretPaine[i]);
+		printf("%.2f,", brutarie.pretPaine[i]);
 	}
-	printf("Locatie:%s\n", brutarie.locatie);
+	printf("	Locatie:%s\n", brutarie.locatie);
 }
 
-void citireDinFisier(struct Nod** head,const char* numefisier) {	
-	if(numefisier != NULL && strlen(numefisier) > 0)
+void citireDinFisier(struct Nod** head, const char* numefisier) {
+	if (numefisier != NULL && strlen(numefisier) > 0)
 	{
 		FILE* f = fopen(numefisier, "r");
 		if (f != NULL) {
@@ -69,7 +70,7 @@ void freeBrutarie(struct Brutarie* brutarie) {
 	if (brutarie->nrPaini != 0 && brutarie->pretPaine != NULL)
 		free(brutarie->pretPaine);
 }
-void stergeNodIndex(struct Nod** head,int index) {
+void stergeNodIndex(struct Nod** head, int index) {
 	if ((*head) != NULL) {
 		struct Nod* temp = *head;
 		if (index == 0) {
@@ -77,12 +78,12 @@ void stergeNodIndex(struct Nod** head,int index) {
 			*head = temp->next;
 			free(temp);
 			return;
-		}		
+		}
 		for (int i = 0; temp != NULL && i < index - 1; i++)
 			temp = temp->next;
 		if (temp == NULL || temp->next == NULL)
 			return;
-		struct Node* next = temp->next->next;
+		struct Nod* next = temp->next->next;
 		freeBrutarie(&(temp->next->brutarie));
 		free(temp->next);
 		temp->next = next;
@@ -90,7 +91,7 @@ void stergeNodIndex(struct Nod** head,int index) {
 
 }
 //criteriul
-float mediePreturi(int nrPreturi,float* preturi) {
+float mediePreturi(int nrPreturi, float* preturi) {
 	if (nrPreturi == 0)
 		return 0;
 	float medie = 0;
@@ -114,7 +115,7 @@ void afisareLista(struct Nod* head) {
 void adaugareSortata(struct Nod** head, struct Brutarie brutarie) {
 	struct Nod* nod = (struct Nod*)malloc(sizeof(struct Nod));
 	nod->brutarie = brutarie;
-	if (*head == NULL || mediePreturi((*head)->brutarie.nrPaini, 
+	if (*head == NULL || mediePreturi((*head)->brutarie.nrPaini,
 		(*head)->brutarie.pretPaine) >= mediePreturi(nod->brutarie.nrPaini, nod->brutarie.pretPaine)) {
 		nod->next = *head;
 		*head = nod;
@@ -129,6 +130,57 @@ void adaugareSortata(struct Nod** head, struct Brutarie brutarie) {
 	nod->next = current->next;
 	current->next = nod;
 
+}
+void interschimbareNoduri(struct Nod* head, int index1, int index2) {
+
+	struct Nod* nod1 = NULL;
+	struct Nod* nod2 = NULL;
+	int maxim = index1 > index2 ? index1 : index2;
+	int min = index1 > index2 ? index2 : index1;
+	for (int index = 0; index < maxim && head != NULL; index++) {
+		if (index == min) {
+			nod1 = head;
+		}
+		head = head->next;
+	}
+	nod2 = head;
+	if (nod1 != NULL && nod2 != NULL) {
+		struct Brutarie aux = nod1->brutarie;
+		nod1->brutarie = nod2->brutarie;
+		nod2->brutarie = aux;
+	}
+}
+
+struct Brutarie* filtrare(struct Nod* cap,float medieMinima,int *nrVector) {
+
+	(*nrVector) = 0;
+	struct Nod* aux = cap;
+	while (cap != NULL) {
+		if (mediePreturi(cap->brutarie.nrPaini, cap->brutarie.pretPaine) >= medieMinima)
+			(*nrVector)++;
+		cap = cap->next;
+	}
+	if (*nrVector != 0) {
+		struct Brutarie* vector = malloc((*nrVector)*sizeof(struct Brutarie));
+		int k = 0;
+		while (aux != NULL) {
+
+			if (mediePreturi(aux->brutarie.nrPaini, aux->brutarie.pretPaine) >= medieMinima) {
+				vector[k].nume = malloc(strlen(aux->brutarie.nume) + 1);
+				strcpy(vector[k].nume, aux->brutarie.nume);
+				vector[k].nrPaini = aux->brutarie.nrPaini;
+				vector[k].pretPaine = malloc(vector[k].nrPaini * sizeof(float));
+				for (int i = 0; i < vector[k].nrPaini; i++) {
+					vector[k].pretPaine[i] = aux->brutarie.pretPaine[i];
+				}
+				strcpy(vector[k].locatie, aux->brutarie.locatie);
+				k++;
+			}
+			aux = aux->next;
+		}
+		return vector;
+	}
+	return NULL;
 }
 int main() {
 
@@ -148,7 +200,17 @@ int main() {
 	adaugareSortata(&headSortat, brutarie1);
 	adaugareSortata(&headSortat, brutarie2);
 	adaugareSortata(&headSortat, brutarie3);
+	int dim;
+	struct Brutarie* brutarie = filtrare(headSortat, 1.5, &dim);
+	printf("-----------");
+	for (int i = 0; i < dim; i++) {
+		afisareBrutarie(brutarie[i]);
+		printf("Media este:%.2f\n", mediePreturi(brutarie[i].nrPaini, brutarie[i].pretPaine));
+	}
+	printf("-----------");
 	afisareLista(headSortat);
-
+	printf("-----------");
+	interschimbareNoduri(headSortat, 1, 2);
+	afisareLista(headSortat);
 	return 0;
 }
