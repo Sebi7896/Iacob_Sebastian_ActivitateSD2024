@@ -1,0 +1,5 @@
+﻿  FileName.c
+C:\Users\felix\source\repos\Iacob_Sebastian_ActivitateSD2024\Task5\Task5\FileName.c(56,30): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\felix\source\repos\Iacob_Sebastian_ActivitateSD2024\Task5\Task5\FileName.c(88,14): warning C4133: '=': incompatible types - from 'Node *' to 'Nod *'
+C:\Users\felix\source\repos\Iacob_Sebastian_ActivitateSD2024\Task5\Task5\FileName.c(85,16): warning C4133: 'initializing': incompatible types - from 'Nod *' to 'Node *'
+  Task5.vcxproj -> C:\Users\felix\source\repos\Iacob_Sebastian_ActivitateSD2024\Task5\x64\Debug\Task5.exe

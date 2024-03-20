@@ -1,0 +1,10 @@
+Paine si Delicii,3,23.4,34.5,50.3,Centrul Vechi
+Gustaria Cocheta,2,12.67,67,Piata Unirii
+Boulangerie Doree,3,65.3,35,12,Dorobanti
+Patiseria Fericirii,4,10,12,13,14,Floreasca
+Delicii si Gustari de Panificatie,5,20,21,22c,23,24,Obor
+Cozonacul Fericirii,3,31,32,33,Cotroceni
+Cuptorul Rustic,2,40,41,Piata Victoriei
+Painea Calda de Acasa,4,24,25,26,27,Titan
+Gustari din Faina si Drojdie,5,1,2,3,4,5,Drumul Taberei
+Cosul cu Delicii din Cuptor,2,12.45,10.34,Pipera

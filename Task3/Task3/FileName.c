@@ -16,11 +16,11 @@ struct Brutarie atribuireDefault() {
 	brutarie.pretPaine = NULL;
 	return brutarie;
 }
-void freeBrutarie(struct Brutarie brutarie) {
-	if (brutarie.nume != NULL)
-		free(brutarie.nume);
-	if (brutarie.nrPaini != 0 && brutarie.pretPaine != NULL)
-		free(brutarie.pretPaine);
+void freeBrutarie(struct Brutarie* brutarie) {
+	if (brutarie->nume != NULL)
+		free(brutarie->nume);
+	if (brutarie->nrPaini != 0 && brutarie->pretPaine != NULL)
+		free(brutarie->pretPaine);
 
 }
 void atribuireBrutarie(struct Brutarie* brutarie, const char* nume, int nrPaini, float* preturi, const char* locatie) {
@@ -41,18 +41,18 @@ void atribuireBrutarie(struct Brutarie* brutarie, const char* nume, int nrPaini,
 	strncpy_s(brutarie->locatie, sizeof(brutarie->locatie), locatie, 30);
 	brutarie->locatie[sizeof(brutarie->locatie) - 1] = '\0';
 }
-void afisare(struct Brutarie* brutarie) {
-	printf("\nNume:%s\n", brutarie->nume);
-	printf("Nr Paini:%d\n", brutarie->nrPaini);
-	for (int i = 0; i < brutarie->nrPaini; i++) {
-		printf("Painea %d:%.2f\n", i + 1, brutarie->pretPaine[i]);
+void afisare(struct Brutarie brutarie) {
+	printf("\nNume:%s\n", brutarie.nume);
+	printf("Nr Paini:%d\n", brutarie.nrPaini);
+	for (int i = 0; i < brutarie.nrPaini; i++) {
+		printf("Painea %d:%.2f\n", i + 1, brutarie.pretPaine[i]);
 	}
-	printf("Locatie:%s\n", brutarie->locatie);
+	printf("Locatie:%s\n", brutarie.locatie);
 }
 void afisareVector(struct Brutarie* VectorBrutarie, int lungime) {
 	if (VectorBrutarie != NULL) {
 		for (int i = 0; i < lungime; i++) {
-			afisare(&VectorBrutarie[i]);
+			afisare(VectorBrutarie[i]);
 		}
 	}
 	else
