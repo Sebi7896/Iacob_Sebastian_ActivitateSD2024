@@ -207,6 +207,10 @@ int main() {
 		afisareBrutarie(brutarie[i]);
 		printf("Media este:%.2f\n", mediePreturi(brutarie[i].nrPaini, brutarie[i].pretPaine));
 	}
+	for (int i = 0; i < dim; i++) {
+		freeBrutarie(&brutarie[i]);
+	}
+	free(brutarie);
 	printf("-----------");
 	afisareLista(headSortat);
 	printf("-----------");
