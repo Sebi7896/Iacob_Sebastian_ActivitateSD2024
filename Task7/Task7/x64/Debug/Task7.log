@@ -1,0 +1,6 @@
+﻿  FileName.c
+C:\Users\felix\source\repos\Iacob_Sebastian_ActivitateSD2024\Task7\Task7\FileName.c(25,24): warning C4013: 'strlen' undefined; assuming extern returning int
+C:\Users\felix\source\repos\Iacob_Sebastian_ActivitateSD2024\Task7\Task7\FileName.c(26,2): warning C4013: 'strcpy' undefined; assuming extern returning int
+C:\Users\felix\source\repos\Iacob_Sebastian_ActivitateSD2024\Task7\Task7\FileName.c(104,15): warning C4047: '!=': 'int' differs in levels of indirection from 'void *'
+C:\Users\felix\source\repos\Iacob_Sebastian_ActivitateSD2024\Task7\Task7\FileName.c(179,15): warning C4047: '!=': 'int' differs in levels of indirection from 'void *'
+  Task7.vcxproj -> C:\Users\felix\source\repos\Iacob_Sebastian_ActivitateSD2024\Task7\x64\Debug\Task7.exe
