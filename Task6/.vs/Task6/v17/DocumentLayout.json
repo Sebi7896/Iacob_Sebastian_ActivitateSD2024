@@ -42,8 +42,7 @@
               "RelativeToolTip": "Task6\\brutarie.txt",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAwAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2024-03-25T14:24:49.572Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-25T14:24:49.572Z"
             },
             {
               "$type": "Document",
@@ -51,9 +50,9 @@
               "Title": "FileName.c",
               "DocumentMoniker": "C:\\Users\\felix\\source\\repos\\Iacob_Sebastian_ActivitateSD2024\\Task6\\Task6\\FileName.c",
               "RelativeDocumentMoniker": "Task6\\FileName.c",
-              "ToolTip": "C:\\Users\\felix\\source\\repos\\Iacob_Sebastian_ActivitateSD2024\\Task6\\Task6\\FileName.c*",
-              "RelativeToolTip": "Task6\\FileName.c*",
-              "ViewState": "AQIAAAcBAAAAAAAAAAAAABEBAAAZAAAA",
+              "ToolTip": "C:\\Users\\felix\\source\\repos\\Iacob_Sebastian_ActivitateSD2024\\Task6\\Task6\\FileName.c",
+              "RelativeToolTip": "Task6\\FileName.c",
+              "ViewState": "AQIAADYAAAAAAAAAAAAAADwAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
               "WhenOpened": "2024-03-25T14:19:14.113Z",
               "EditorCaption": ""
