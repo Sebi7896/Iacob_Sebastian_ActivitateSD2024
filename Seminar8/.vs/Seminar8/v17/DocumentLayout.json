@@ -1,10 +1,10 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\felix\\source\\repos\\Iacob_Sebastian_ActivitateSD2024\\Seminar6\\",
+  "WorkspaceRootPath": "C:\\Users\\felix\\source\\repos\\Iacob_Sebastian_ActivitateSD2024\\Seminar8\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6D3291CA-B95D-4D4E-BD8C-13A636B5425F}|Seminar6\\Seminar6.vcxproj|C:\\Users\\felix\\source\\repos\\Iacob_Sebastian_ActivitateSD2024\\Seminar6\\Seminar6\\Source.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{6D3291CA-B95D-4D4E-BD8C-13A636B5425F}|Seminar6\\Seminar6.vcxproj|solutionrelative:Seminar6\\Source.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{5E59365F-63AD-49E9-A35D-0F58F8D994E0}|Seminar8\\Seminar8.vcxproj|C:\\Users\\felix\\source\\repos\\Iacob_Sebastian_ActivitateSD2024\\Seminar8\\Seminar8\\Source.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5E59365F-63AD-49E9-A35D-0F58F8D994E0}|Seminar8\\Seminar8.vcxproj|solutionrelative:Seminar8\\Source.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,7 +14,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 12,
+          "SelectedChildIndex": 11,
           "Children": [
             {
               "$type": "Bookmark",
@@ -61,20 +61,16 @@
               "Name": "ST:130:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Source.c",
-              "DocumentMoniker": "C:\\Users\\felix\\source\\repos\\Iacob_Sebastian_ActivitateSD2024\\Seminar6\\Seminar6\\Source.c",
-              "RelativeDocumentMoniker": "Seminar6\\Source.c",
-              "ToolTip": "C:\\Users\\felix\\source\\repos\\Iacob_Sebastian_ActivitateSD2024\\Seminar6\\Seminar6\\Source.c",
-              "RelativeToolTip": "Seminar6\\Source.c",
-              "ViewState": "AQIAAI0AAAAAAAAAAAAAAJQAAAAAAAAA",
+              "DocumentMoniker": "C:\\Users\\felix\\source\\repos\\Iacob_Sebastian_ActivitateSD2024\\Seminar8\\Seminar8\\Source.c",
+              "RelativeDocumentMoniker": "Seminar8\\Source.c",
+              "ToolTip": "C:\\Users\\felix\\source\\repos\\Iacob_Sebastian_ActivitateSD2024\\Seminar8\\Seminar8\\Source.c",
+              "RelativeToolTip": "Seminar8\\Source.c",
+              "ViewState": "AQIAAG0AAAAAAAAAAADwv3sAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2024-03-25T18:19:04.448Z",
+              "WhenOpened": "2024-04-12T07:26:03.61Z",
               "EditorCaption": ""
             }
           ]
