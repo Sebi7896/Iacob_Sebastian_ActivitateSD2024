@@ -14,7 +14,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 11,
+          "SelectedChildIndex": 12,
           "Children": [
             {
               "$type": "Bookmark",
@@ -61,6 +61,10 @@
               "Name": "ST:130:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Source.c",
@@ -68,7 +72,7 @@
               "RelativeDocumentMoniker": "Seminar6\\Source.c",
               "ToolTip": "C:\\Users\\felix\\source\\repos\\Iacob_Sebastian_ActivitateSD2024\\Seminar6\\Seminar6\\Source.c",
               "RelativeToolTip": "Seminar6\\Source.c",
-              "ViewState": "AQIAAI4AAAAAAAAAAAAAAHMAAAAZAAAA",
+              "ViewState": "AQIAAI0AAAAAAAAAAAAAAJQAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
               "WhenOpened": "2024-03-25T18:19:04.448Z",
               "EditorCaption": ""
