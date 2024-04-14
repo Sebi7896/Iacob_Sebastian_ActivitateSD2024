@@ -114,6 +114,7 @@ ListaDubla freeLista(ListaDubla listaDubla) {
 	}
 	listaDubla.cap = NULL;
 	listaDubla.coada = NULL;
+	return listaDubla;
 }
 void afisareDinCoada(ListaDubla lista) {
 	Nod* nod = lista.coada;
